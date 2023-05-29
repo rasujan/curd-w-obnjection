@@ -4,11 +4,11 @@
  */
 exports.seed = async function (knex) {
   // truncate all existing tables
-  await knex.raw('TRUNCATE TABLE "user" CASCADE');
+  await knex.raw('TRUNCATE TABLE "users" CASCADE');
   await knex.raw('TRUNCATE TABLE "channel" CASCADE');
   await knex.raw('TRUNCATE TABLE "video" CASCADE');
 
-  await knex("channel").insert([
+  await knex("channels").insert([
     {
       id: 1,
       name: "test_channel_1",
@@ -23,7 +23,7 @@ exports.seed = async function (knex) {
     },
   ]);
 
-  await knex("user").insert([
+  await knex("users").insert([
     {
       id: 1,
       name: "test_user_1",
@@ -44,7 +44,7 @@ exports.seed = async function (knex) {
     },
   ]);
 
-  await knex("video").insert([
+  await knex("videos").insert([
     {
       id: 1,
       title: "test_video_1",

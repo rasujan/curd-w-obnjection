@@ -3,22 +3,22 @@ const { Model } = require("objection");
 
 class User extends Model {
   static get tableName() {
-    return "user";
+    return "users";
   }
 
-  static get relationMappings() {
-    const Channel = require("./channel");
+  // static get relationMappings() {
+  //   const Channel = require("./channel");
 
-    return {
-      channel: {
-        relation: Model.HasOneRelation,
-        modelClass: Channel,
-        join: {
-          from: "user.channelId",
-          to: "channel.id",
-        },
-      },
-    };
-  }
+  //   return {
+  //     channel: {
+  //       relation: Model.BelongsToOneRelation,
+  //       modelClass: Channel,
+  //       join: {
+  //         from: "users.channelId",
+  //         to: "channels.id",
+  //       },
+  //     },
+  //   };
+  // }
 }
 module.exports = User;
